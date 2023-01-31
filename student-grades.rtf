@@ -1,0 +1,37 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE TABLE student_grades (\
+    id INTEGER PRIMARY KEY AUTOINCREMENT,\
+    name TEXT,\
+    number_grade INTEGER,\
+    fraction_completed REAL);\
+    \
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Winston", 90, 0.805);\
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Winnefer", 95, 0.901);\
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Winsteen", 85, 0.906);\
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Wincifer", 66, 0.7054);\
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Winster", 76, 0.5013);\
+INSERT INTO student_grades (name, number_grade, fraction_completed)\
+    VALUES ("Winstonia", 82, 0.9045);\
+\
+SELECT name, number_grade, ROUND(fraction_completed * 100) as percent_completed from student_grades;\
+\
+SELECT COUNT(*) as "Count", \
+    CASE\
+        WHEN number_grade > 90 THEN "A"\
+        WHEN number_grade > 80 THEN "B"\
+        WHEN number_grade > 70 THEN "C"\
+        ELSE "F"\
+    END as letter_grade\
+FROM student_grades\
+    GROUP BY letter_grade;}

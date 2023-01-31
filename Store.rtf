@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE TABLE store (id INTEGER, item_name TEXT, price NUMERIC, quantity INTEGER, quantity_sold INTEGER);\
+INSERT INTO store VALUES (0, "Giant Defy 0", 1000.00, 5, 0);\
+INSERT INTO store VALUES (1, "Specialized Road", 1500.00, 3, 0);\
+INSERT INTO store VALUES (2, "Schwinn Mountain", 499.00, 4, 0);\
+INSERT INTO store VALUES (3, "Bike #3", 799.99, 7, 1);\
+INSERT INTO store VALUES (4, "Bike #5", 249.99, 10, 0);\
+INSERT INTO store VALUES (5, "Bike #6", 349.99, 2, 0);\
+INSERT INTO store VALUES (6, "Bike #7", 149.00, 9, 0);\
+INSERT INTO store VALUES (7, "Item 8", 1999.99, 1, 0);\
+INSERT INTO store VALUES (8, "Last Ride", 2999.99, 17, 0);\
+INSERT INTO store VALUES (9, "Who Ride", 1299.00, 8, 0);\
+INSERT INTO store VALUES (10, "We Ride", 899.00, 5, 0);\
+INSERT INTO store VALUES (11, "Let's ride", 999.00, 4, 0);\
+INSERT INTO store VALUES (12, "Biggie Ride", 6969.00, 4, 20);\
+INSERT INTO store VALUES (13, "Pac Ride", 420.69, 0, 0);\
+INSERT INTO store VALUES (14, "Snoop Ride", 2020.00, 19, 99);\
+\
+SELECT * from store ORDER BY price;\
+SELECT SUM(quantity_sold) FROM store WHERE (price>99.00);}
