@@ -1,0 +1,34 @@
+/* Create table about the people and what they do here */
+CREATE TABLE persons (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO persons (fullname, age) VALUES ("Bobby McBobbyFace", "12");
+INSERT INTO persons (fullname, age) VALUES ("Lucy BoBucie", "25");
+INSERT INTO persons (fullname, age) VALUES ("Banana FoFanna", "14");
+INSERT INTO persons (fullname, age) VALUES ("Shish Kabob", "20");
+INSERT INTO persons (fullname, age) VALUES ("Fluffy Sparkles", "8");
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    star_id INTEGER,
+    costar_id INTEGER);
+
+INSERT INTO movies (movie_title, star_id, costar_id) VALUES ("Main Screen", 1, 2);
+INSERT INTO movies (movie_title, star_id, costar_id) VALUES ("Main Screen 2", 1, 2);
+INSERT INTO movies (movie_title, star_id, costar_id) VALUES ("Super Show", 3, 4);
+INSERT INTO movies (movie_title, star_id) VALUES ("Indie Darling", 1);
+INSERT INTO movies (movie_title, star_id, costar_id) VALUES ("Blockbuster Hit", 5, 1);
+
+CREATE TABLE charity (id INTEGER PRIMARY KEY AUTOINCREMENT, charity_name TEXT, donor_id INTEGER, amount NUMERIC);
+
+INSERT INTO charity (charity_name, donor_id, amount) VALUES ("Red Cross", 1, 1500.00);
+INSERT INTO charity (charity_name, donor_id, amount) VALUES ("MSF", 2, 1000.00);
+INSERT INTO charity (charity_name, donor_id, amount) VALUES ("Live Aid", 3, 500.00);
+INSERT INTO charity (charity_name, donor_id, amount) VALUES ("Farm Aid", 4, 999.00);
+INSERT INTO charity (charity_name, donor_id, amount) VALUES ("Animal Rescue League", 4, 2500.00);
+
+SELECT persons.fullname, charity.charity_name, charity.amount FROM persons
+    LEFT OUTER JOIN charity
+    ON persons.id = charity.donor_id;
